@@ -1,3 +1,22 @@
+var img = createImage(66, 66);
+img.loadPixels();
+for (var i = 0; i < img.width; i++) {
+  for (var j = 0; j < img.height; j++) {
+    img.set(i, j, color(0, 90, 102, (i % img.width) * 2));
+  }
+}
+img.updatePixels();
+image(img, 17, 17);
+image(img, 34, 34);
+
+
+
+
+
+
+
+// template below
+
 var capture;
 var w = 640;
 var h = 480;
