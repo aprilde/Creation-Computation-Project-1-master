@@ -1,13 +1,13 @@
 var capture;
-var w = 640;
+var w = 1000;
 var h = 480;
 
 function setup() {
     capture = createCapture({
         audio: false,
         video: {
-            width: w,
-            height: h
+            width: w*2,
+            height: h*2
         }
     }, function() {
         console.log('capture ready.')
@@ -24,7 +24,7 @@ function draw() {
 var c = color(0, 126, 255, 102);
 fill(c);
 rect(0, 0, 300, 1000);
-    var c = color(0, 0, 255, 102);
+    var c = color(0, 0, 255, 255);
 fill(c);
 rect(300, 0, 350, 3000);
 var value = alpha(c); // Sets 'value' to 102
