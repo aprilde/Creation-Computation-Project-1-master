@@ -10,5 +10,5 @@ function draw() {
   rotateY(frameCount * 0.001);
   //pass image as texture
   texture(video);
-  box(400, 400, 200);
+  box(400, 400, 400);
 }
