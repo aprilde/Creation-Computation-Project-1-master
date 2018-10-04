@@ -28,8 +28,8 @@ function draw() {
 
       noStroke();
       fill(255);
-      rectMode(CENTER);
-      rect(x*vScale, y*vScale, w, w);
+      ellipseMode(CENTER);
+      ellipse(x*vScale, y*vScale, w, w);
 
     }
   }
