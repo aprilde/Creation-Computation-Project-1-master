@@ -27,6 +27,7 @@ function setup() {
 
 function draw() {
   background(0);
+
   	timer(); // Call timer
 	if (rgn == 0) {
 		effect1();
@@ -36,18 +37,28 @@ function draw() {
 		effect3();
 	} else if (rgn == 3) {
 		effect4();
-	} else if (rgn == 4) {
-		effect5();
-	}
+	}// else if (rgn == 4) {
+	// 	effect5();
+	// }
 
 }
 
 // every 5 seconds
 function timer(){
 	var x = 5;
+	var temp;
 	if (second() - t > x || t - second() > (59 - x) ){
-        rgn = Math.round(random(0,4)); // assign rgn a random number
+        temp = Math.round(random(0,3)); // assign rgn a random number
         t = second();
+        if ( rgn == temp){
+        	if(rgn == 0) {
+        		rgn ++;
+        	} else {
+        		rgn --;
+        	}
+        } else {
+        	rgn = temp;
+        }
     }
 }
 
@@ -98,7 +109,7 @@ function effect3() {
   }
 
   for (var i = 0; i < snapshots.length; i++) {
-    tint(255, 100);
+    //tint(255, 100);
     var index = (i + frameCount) % snapshots.length;
     image(snapshots[index], x, y, w, h);
     x = x + w;
@@ -112,7 +123,7 @@ function effect3() {
 function effect4(){
   background(0);
   video.loadPixels();
-  var stepSize = 4;
+  var stepSize = 2;
   for (var x = 0; x < video.width; x += stepSize) {
     for (var y = 0; y < video.height; y += stepSize) {
       var index = ((y*video.width) + x) * 4;
@@ -120,8 +131,9 @@ function effect4(){
       var greenVal = video.pixels[index + 1];
       var blueVal = video.pixels[index + 2];
       fill(redVal, greenVal, blueVal);
-      ellipse(x, y, stepSize, stepSize);
-    }
+      var num = 16;
+      ellipse((x*num )+ 15, (y*num)+15, stepSize*num, stepSize*num);
+	}
   }
 }
 // function effect5(){
