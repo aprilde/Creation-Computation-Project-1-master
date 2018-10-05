@@ -11,7 +11,7 @@ var videoHeight = 398;
 
 function setup() {
   // setup canvas
-  createCanvas(videoWidth, videoHeight);
+  canvas = createCanvas(videoWidth, videoHeight);
   background(0);
 
   // setup video capture
