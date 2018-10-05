@@ -16,8 +16,12 @@ function setup() {
   background(255);
 
   // Camera X-axis <-->
-  // let camX = map(mouseX, 0, width, -200, 200);
-  // camera(camX, 0, (height/2) / tan(PI / 6), camX, 0, 0, 0, 1, 0);
+  scale(-1, -1);
+
+  var varY = (400 * (cos(angle)) + 1000);
+
+  let camX = map(varY, 0, width, -200, 200);
+  camera(camX, 0, (height/2) / tan(PI / 6), camX, 0, 0, 0, 1, 0);
 
   // Camera Vibration
   // let camX = random(-5, 5);
@@ -25,7 +29,7 @@ function setup() {
   // let camZ = random(-5, 5);
   // camera(camX, camY, camZ + (height/2) / tan(PI / 6), camY, camZ, camX, 0, 1, 0);
 
-  var loop = (cos(angle)) * 20;
+  // var loop = (cos(angle)) * 20;
 
   // let fov = map(loop -60, 0, width, 0, PI);
   // let cameraZ = (height / 2) / tan((PI/3) / 2.0);
@@ -39,13 +43,16 @@ function setup() {
 
   for (let x = -200; x < 200; x += 50) {
     push();
-    // rotateX(angle);
-    // rotateY(angle * 0.3);
-    // rotateZ(angle * 1.2)
+    translate(x, 0, x + 350);
+    rotateX(angle);
+    rotateY(angle * 0.01);
+    rotateZ(angle * 0.01)
     noStroke();
-    box(100);
+    box(50);
     pop();
   }
+
+  translate(0, )
 
   angle += 0.02;
 }
