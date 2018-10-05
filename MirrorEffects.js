@@ -1,7 +1,7 @@
 var video;
 var vScale = 16;
 var rgn;
-var t; 
+var t;
 var snapshots = [];
 var counter = 0;
 var total;
@@ -20,7 +20,8 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(width/vScale, height/vScale);
   video.hide();
-  	t = second(); // gets the second for the time you open your website
+  t = second(); // gets the second for the time you open your website
+  console.log(t);
 	rgn = 0;
 
 }
@@ -82,7 +83,7 @@ function effect1(){
       ellipse(x*vScale, y*vScale, w, w);
 
     }
-  }	
+  }
 }
 
 function effect2(){
@@ -149,6 +150,3 @@ function effect4(){
 //   image(img, 0, 0);
 
 // }
-
-
-
