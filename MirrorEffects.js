@@ -6,6 +6,9 @@ var snapshots = [];
 var counter = 0;
 var total;
 var x = 0;
+var effect1;
+var effect2;
+var effect3;
 
 function setup() {
   createCanvas(640, 480);
@@ -64,19 +67,10 @@ function effect1(){
 }
 
 function effect2(){
+  //background(255);
+  image(video, 0, 0, width, height);
+  filter('INVERT');
   video.loadPixels();
-  // image(video, 0, 0);
-
-  var w = video.width;
-  var h = video.height;
-
-  copy(video, w/2, 0, 1, h, x, 0, 1, h);
-
-  x = x + 1;
-  
-  if (x > width) {
-    x = 0;
-  }
 
 }
 
@@ -96,7 +90,7 @@ function effect3() {
   }
 
   for (var i = 0; i < snapshots.length; i++) {
-    //tint(255, 50);
+    tint(255, 100);
     var index = (i + frameCount) % snapshots.length;
     image(snapshots[index], x, y, w, h);
     x = x + w;
