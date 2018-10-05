@@ -10,9 +10,9 @@ var effect1;
 var effect2;
 var effect3;
 
-function preload(){
-	 img = loadImage('images/spaceman.png');
-}
+// function preload(){
+// 	 img = loadImage('images/spaceman.png');
+// }
 
 function setup() {
   createCanvas(640, 480);
@@ -36,6 +36,8 @@ function draw() {
 		effect3();
 	} else if (rgn == 3) {
 		effect4();
+	} else if (rgn == 4) {
+		effect5();
 	}
 
 }
@@ -122,13 +124,19 @@ function effect4(){
     }
   }
 }
+// function effect5(){
+//   background(0);
+//   video.loadPixels();
 
-function effect5(){
-  background(0);
-  video.loadPixels();
-  image(img, 0, 0);
 
-}
+// }
+
+// function effect6(){
+//   background(0);
+//   video.loadPixels();
+//   image(img, 0, 0);
+
+// }
 
 
 
