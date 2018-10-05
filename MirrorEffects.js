@@ -30,6 +30,8 @@ function draw() {
 		effect2();
 	} else if (rgn == 2) {
 		effect3();
+	} else if (rgn == 3) {
+		effect4();
 	}
 
 }
@@ -97,6 +99,22 @@ function effect3() {
     if (x >= width) {
       x = 0;
       y = y + h;
+    }
+  }
+}
+
+function effect4(){
+  background(0);
+  video.loadPixels();
+  var stepSize = 4;
+  for (var x = 0; x < video.width; x += stepSize) {
+    for (var y = 0; y < video.height; y += stepSize) {
+      var index = ((y*video.width) + x) * 4;
+      var redVal = video.pixels[index];
+      var greenVal = video.pixels[index + 1];
+      var blueVal = video.pixels[index + 2];
+      fill(redVal, greenVal, blueVal);
+      ellipse(x, y, stepSize, stepSize);
     }
   }
 }
