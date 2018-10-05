@@ -14,11 +14,9 @@ function setup() {
   function draw() {
   background(255);
   texture(video);
-  rectMode(CENTER);
-  noStroke();
 
 
-  // Smooth zoom in and out from values 220 to 320.
+
   var zCamera = (30 * (sin(angle))) + 545;
   translate(0, 0, zCamera);
 

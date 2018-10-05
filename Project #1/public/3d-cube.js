@@ -11,4 +11,5 @@ function draw() {
   //pass image as texture
   texture(video);
   box(400, 400, 400);
+  box(300, 300, 300);
 }
