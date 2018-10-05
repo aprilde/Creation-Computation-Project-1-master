@@ -65,8 +65,8 @@ function effect1(){
 
 function effect2(){
 	  video.loadPixels();
-	  particle.update();
-	  particle.show();
+	  // particle.update();
+	  // particle.show();
 	    for (var i = 0; i < 200; i++) {
     particles[i] = new Particle(random(width), random(height));
   }
