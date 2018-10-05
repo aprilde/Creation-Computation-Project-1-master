@@ -36,7 +36,7 @@ function draw() {
 
       var bright = (r+g+b)/3;
 
-      var threshold = 120;
+      var threshold = 10;
 
       var checkIndex = x + y * cols;
 

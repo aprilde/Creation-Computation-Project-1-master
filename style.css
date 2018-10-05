@@ -1,0 +1,27 @@
+video {
+    padding-left:2px;
+    padding-top: 2px;   
+    z-index: 5;
+}
+
+#video{
+    margin-top:70px;
+    background-size: cover;
+    width:501px;
+    height:286px;
+    text-align: left;
+    cursor: pointer;
+    position:relative;
+}
+
+#video:after {
+    content: '';
+    display: block;
+    background: url(images/vecto.png) no-repeat top left transparent;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 10;
+}
