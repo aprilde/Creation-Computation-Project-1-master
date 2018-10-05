@@ -10,6 +10,10 @@ var effect1;
 var effect2;
 var effect3;
 
+function preload(){
+	 img = loadImage('images/spaceman.png');
+}
+
 function setup() {
   createCanvas(640, 480);
   pixelDensity(1);
@@ -40,7 +44,7 @@ function draw() {
 function timer(){
 	var x = 5;
 	if (second() - t > x || t - second() > (59 - x) ){
-        rgn = Math.round(random(0,3)); // assign rgn a random number
+        rgn = Math.round(random(0,4)); // assign rgn a random number
         t = second();
     }
 }
@@ -110,13 +114,20 @@ function effect4(){
   for (var x = 0; x < video.width; x += stepSize) {
     for (var y = 0; y < video.height; y += stepSize) {
       var index = ((y*video.width) + x) * 4;
-      var redVal = video.pixels[index];
+      var redVal = video.pixels[index + 0];
       var greenVal = video.pixels[index + 1];
       var blueVal = video.pixels[index + 2];
       fill(redVal, greenVal, blueVal);
       ellipse(x, y, stepSize, stepSize);
     }
   }
+}
+
+function effect5(){
+  background(0);
+  video.loadPixels();
+  image(img, 0, 0);
+
 }
 
 
