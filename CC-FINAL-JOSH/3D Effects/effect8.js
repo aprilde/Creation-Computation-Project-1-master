@@ -27,25 +27,20 @@ function setup() {
 
   var loop = (cos(angle)) * 20;
 
-  // let fov = map(loop -60, 0, width, 0, PI);
-  // let cameraZ = (height / 2) / tan((PI/3) / 2.0);
-  // perspective(fov, width / height, cameraZ / 10.0, cameraZ * 10.0);
-
-  // orthro();
-
+  let fov = map(loop -60, 0, width, 0, PI);
+  let cameraZ = (height / 2) / tan((PI/3) / 2.0);
+  perspective(fov, width / height, cameraZ / 10.0, cameraZ * 10.0);
 
   texture(video);
 
+  push();
+  rotateX(angle);
+  rotateY(angle * 0.3);
+  rotateZ(angle * 1.2)
 
-  for (let x = -200; x < 200; x += 50) {
-    push();
-    // rotateX(angle);
-    // rotateY(angle * 0.3);
-    // rotateZ(angle * 1.2)
-    noStroke();
-    box(100);
-    pop();
-  }
+  noStroke();
+  box(100);
+  pop();
 
   angle += 0.02;
 }
