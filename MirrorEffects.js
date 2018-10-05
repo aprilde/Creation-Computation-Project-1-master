@@ -1,11 +1,11 @@
 var video;
 var vScale = 16;
-var particles = [];
 var rgn;
 var t; 
 var snapshots = [];
 var counter = 0;
 var total;
+var x = 0;
 
 function setup() {
   createCanvas(640, 480);
@@ -35,7 +35,7 @@ function draw() {
 function timer(){
 	var x = 5;
 	if (second() - t > x || t - second() > (59 - x) ){
-        rgn = Math.round(random(0,3)); // assign rgn a random number between 0 to 3
+        rgn = Math.round(random(0,3)); // assign rgn a random number
         t = second();
     }
 }
@@ -64,16 +64,20 @@ function effect1(){
 }
 
 function effect2(){
-	  video.loadPixels();
-	  // particle.update();
-	  // particle.show();
-	    for (var i = 0; i < 200; i++) {
-    particles[i] = new Particle(random(width), random(height));
+  video.loadPixels();
+  // image(video, 0, 0);
+
+  var w = video.width;
+  var h = video.height;
+
+  copy(video, w/2, 0, 1, h, x, 0, 1, h);
+
+  x = x + 1;
+  
+  if (x > width) {
+    x = 0;
   }
-  for(var i = 0; i < particles.length; i++) {
-    // particles[i].update();
-    // particles[i].show();
-}
+
 }
 
 function effect3() {
