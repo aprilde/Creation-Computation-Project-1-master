@@ -1,8 +1,5 @@
 var video;
-
 var vScale = 16;
-//var slider;
-
 var cols = 40;
 var rows = 30;
 
@@ -14,7 +11,6 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(cols, rows);
   video.hide();
-  //slider = createSlider(0, 255, 77);
 
   for (var y = 0; y < rows; y++) {
     for (var x = 0; x < cols; x++) {
@@ -40,7 +36,7 @@ function draw() {
 
       var bright = (r+g+b)/3;
 
-      var threshold = 90;
+      var threshold = 120;
 
       var checkIndex = x + y * cols;
 
